@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!--Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7COrbitron:400,500,700,900&display=swap" rel="stylesheet">
+
+  <!--Lightbox Gallery https://lokeshdhakar.com/projects/lightbox2/-->
+  <link rel="stylesheet" href="css/lightbox.css">
+
+  <title>Soulmonger</title>
+</head>
+
+<body>
+
+
+  <header class="container-fluid pt-1 pb-1 align-items-center sticky-top">
+    <nav class="row justify-content-around">
+      <a class="col-md-3" href="index.html">Home</a>
+      <a class="col-md-3" href="index.html#projects">Projects</a>
+      <a class="col-md-3" href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container-fluid">
+
+    <div class="mx-md-5">
+
+      <section class="div-spacer">
+
+        <div class="row justify-content-between my-5">
+          <div class="mr-sm-5 col-12 col-md-5 order-1 order-md-1">
+            <h2>Soulmonger</h2>
+            <h5>A metroidvania platformer done in Unity where the player is the sword and enemies are used to wield you </h5>
+            <em class="roles">Game Design</em>
+            <ul>
+              <li>Bert Cheung</li>
+              <li>Quinn Macdonald - Project Manager, Visual Designer, Level Designer</li>
+              <li>Zach Chan - Project Manager, Programmer</li>
+              <li>Mark Zhang - Visual Designer, Media Specialist</li>
+              <li>Yi Xiang - Visual Designer, Programmer</li>
+            </ul>
+
+
+            <em class="roles">My Role: Programmer, Media Specialist</em>
+            <p class="my-3">Soulmonger is a combat based metroidvania 2D platformer using the Unity engine. The player must navigate through a series of unique areas solving combat and movement based challenges. Narrative moments and characters will be interspersed throughout the game’s progression, giving context to the game’s story and setting.  
+              Set in a dark comedy fantasy world, this side scrolling metroidvania twists the genre by letting you play as Styx, an ancient demonic sword trying to escape its dark prison. Styx is able to possess the bodies of fallen enemies to wield itself, making each fight an opportunity to gain a new set of abilities, depending on the enemy’s type. This game brings a unique spin by making enemies a resource, power-up, and challenge, all at the same time. 
+            </p>
+          </div>
+
+          <figure class="ml-sm-5 col-12 col-md-5 order-2 order-md-2">
+            <iframe width="762" height="560" src="https://www.youtube.com/embed/nJqDLldQ_wU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- <a href="img/freedom/freedom.jpg" data-lightbox="freedom" data-title="For Freedom">
+              <img src="img/freedom/freedom.jpg" class="project-img img-fluid banner" alt="For Freedom Image">
+            </a> -->
+            <figcaption>Soulmonger Teaser Trailer</figcaption>
+          </figure>
+        </div>
+    </section>
+
+    <section class="div-spacer">
+      <div class="row justify-content-between">
+        <div class="col-sm-6 order-1 order-md-2">
+          <h2 class="mb-5 h2-alpha90">Process</h2>
+          <h4>Platforming & Controls</h4>
+          <p>Our game project was made as a semester project for our IAT410 Advanced Game Design course. We looked at the possible games we could do in Unity that was
+            possible in 3 months given our experience and skill. When we settled on the idea of a Metroidvania style game, we needed a gimmick that would distinguish it from
+            other Metroidvania style games. Quinn had the brilliant idea of combining it with an idea he had for a previous game, and thus the concept of Soulmonger was born.
+            We started first and foremost on prototyping the gameplay and design of the game. 
+
+            
+          </p>
+          <p>I was in charge of programming and prototyping the controls of our main character Styx. Quinn suggested Ori and the Blind Forest & Hollow Knight as the main inspirations
+            for the platforming controls of the game. I used Unity's 2D box colliders to test for the main character's grounded state as we did not want the player to be able to jumping
+          infinitely while in the air (although later on we decided the gargoyle form will allow players to double jump!). I added SerializedFields for the physics of the jumps - this was 
+        so we could adjust jump physics and height to our liking on the fly. I also added a buffer for jumping so players can mash the jump key without worrying about the game eating up their input.</p>
+        </div>
+
+        <figure class="mr-sm-5 col-12 col-md-5  order-2 order-md-1">
+          <a href="img/soulmonger/jumping.gif" data-lightbox="freedom"
+            data-title="Our prototyping involved a lot of testing and emphasis on fluid movement.">
+            <img src="img/soulmonger/jumping.gif" class="project-img img-fluid" alt="Process Image">
+          </a>
+          <figcaption>Our prototyping involved a lot of testing and emphasis on fluid movement.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="div-spacer">
+      <div class="row justify-content-between">
+        <div class="col-sm-6 order-1 order-md-1">
+          <h2 class="mb-5 h2-alpha90">Enemy AI</h2>
+          <p>The enemy's attack patterns and routines were handled by me. We had several enemy types for this game: Thralls, Gargoyles, and the boss enemy Knight. 
+            The Thralls were the simplest enemies to program. They had a 2D collider in front to check for the player object - if the player hitbox wandered inside that collider 
+            then that means they were in range and the Thralls would perform their melee attack. If the players left their range for a certain amount of time, they would go back to their neutral state.
+
+            The gargoyles functioned in a similiar pattern, but instead would shoot fireball projectiles at the player.
+          </p>
+
+          <p>
+            The most complex routine was the Knight's. As part of our design document, we wanted him to have two distinct phases: The first phase would be him shoulder charging 
+            across the room, dealing damage to the player if he got caught in it. The second phase would be him throwing axes in the air after he finished his shoulder charge. For this, I programmed a
+            small finite-state structure for the boss' AI.</p>
+            <p>
+            The first phase was accomplished by having two waypoints that the boss would cycle through whenever he did a 
+            shoulder charge, representing him charging towards the left and right sides of the room. The second phase used physics to determine the arc and velocity of the axe throwing, and I added in
+            SerializedFields to change the number of axes thrown per phase, the rate of fire for the axes, and more.
+          </p>
+        </div>
+
+        <figure class="ml-sm-5 col-12 col-md-5  order-2 order-md-2">
+          <a href="img/soulmonger/knight.png" data-lightbox="freedom"
+            data-title="An example of an enemy and its properties">
+            <img src="img/soulmonger/knight.png" class="project-img img-fluid" alt="Process Image">
+          </a>
+          <figcaption>An example of an enemy and its properties</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="div-spacer">
+      <div class="col-12 mb-5">
+        <figure class="container-fluid w-75 order-2 order-md-2">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/507759400" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </figure>
+      </div>
+      
+      <div class="row justify-content-between">
+        <div class=" order-1">
+          <h2 class="mb-5 h2-alpha90">Result</h2>
+
+          <p>Soulmonger came out beautifully. Our final result was 4 full levels not including a hub and final boss level and 3 fully animated and programmed enemies. We had employees from game industry studios including EA have a look at our class' presentations, and we came out with second place.
+            If there was one thing I would've worked on it would be managing the project more efficiently. We did not use an SVN or repo like Github to merge and update our changes - this meant
+            we had to meet up as a group and manually merge all our changes together. It became especially problematic later on as the game's code and structure became more complex and 
+            it resulted in a lot more headaches than there needed to be.
+          </p>
+
+          <p>Some of the skills I've learned and used working on this project include:</p>
+
+          <p>
+          <ul>
+            <li>Learning theory and application of common platformer movement controls and what makes them good including jump buffering and coyote time</li>
+            <li>Unity 2D collisions, colliders, and script triggers</li>
+            <li>Using inheritance and polymorphism for enemies and game objects, serializing field properties</li>
+            <li>Scripting AI routines and behaviours including the end boss fight</li>
+            <li>Creating and using Game Object Prefabs</li>
+            <li>Adding audio and music to the game</li>
+            <li>Lots of debugging and testing!</li>
+            <li>Meeting frequently to update and collaborate</li>
+          </ul>
+          </p>
+        </div>
+
+    </section>
+  </div>
+
+  </div>
+  
+  <footer id="contact" class="container-fluid py-2">
+    <div class="row mx-2 mt-3">
+    <h4>Contact</h4>
+    </div>
+       <div class="row mx-2 mb-3">
+         <h5 class="mr-2">Bert Cheung</h5>
+         <div class="col-auto"><a href="mailto:bertcheung92@gmail.com">bertcheung92@gmail.com</a></div>
+         <div class="col-auto"><a href="https://www.linkedin.com/in/bert-cheung-0b0948101/">LinkedIn</a></div>
+       </div>
+   </footer> 
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <!--Lightbox javascript-->
+  <script src="js/lightbox.js"></script>
+
+
+</body>
+
+</html>
