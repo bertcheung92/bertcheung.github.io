@@ -1,6 +1,11 @@
 body
 {
-	 background-color:white;
+	 background-color: white;
+	background-image:  radial-gradient(#ffffff 1.3px, transparent 1.3px), radial-gradient(#ffffff 1.3px, #c2c2c2 1.3px);
+	background-size: 52px 52px;
+	background-position: 0 0,26px 26px;
+	background-color: #000000;
+	
 }
 strong
 {
@@ -118,4 +123,9 @@ a:hover
 {
 	background-color:#f0f0f0;
 	
+}
+
+.main
+{
+	background-color: white;
 }
